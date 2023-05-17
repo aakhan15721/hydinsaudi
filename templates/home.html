@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<!-- Main Section Start -->
+<div class="main-section">
+	<div class="section-name padding-y-sm"> 
+		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rounded text-info">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 "> 
+				<form method="GET" action="{% url 'home' %}">
+						<div class="flex flex-wrap">
+							<div class="row align-items-center">
+	
+								<div class="col-sm-2 p-2 text-xl">
+									<div class="field-holder">
+										<label>Full name</label>{{form.fullname}}
+									</div>
+								</div>
+								<div class="col-sm-2 p-2 text-xl">
+									<div class="field-holder">
+										<label>Description</label>{{form.Description}}
+									</div>
+								</div>
+								<div class="col-sm-2 p-2 text-xl">
+									<div class="field-holder">
+										<label>Landmark</label>{{form.landmark}}
+									</div>
+								</div>
+								<div class="col-sm-1 p-2 text-xl">
+									<div class="field-holder">
+										<label>City</label>{{form.citycode__name}}
+									</div>
+								</div> 
+								<div class="col-sm-1 p-2 text-xl">
+									<div class="field-holder">
+										<label>Country</label>{{form.countrycode__name}}
+									</div>
+								</div> 
+								<div class="col-sm-1 p-2 text-xl">
+									<div class="field-holder">
+										<label>Sale or Rent</label>{{form.purpose__name}}
+									</div>
+								</div> 
+								<div class="col-sm-1 p-1 text-xl ">
+									<div class="field-holder">
+											<label>Price Range</label>{{form.price}}
+									</div>
+								</div>
+								<div class="d-inline ">	
+									<div class="col-sm-3 p-1 ">
+										<label></label> <input type="submit" value="Search" class="btn btn-outline-info text-uppercase font-weight-bold text-4xl" />
+									</div>
+								</div>		
+
+							</div>
+	
+						</div>
+					</form>
+	
+			</div>
+		</div> 
+	<!-- </div> -->
+	
+
+
+<!-- ========================= SECTION  ========================= -->
+<div class="container-fluid bg-white-300">
+<section class="section-name padding-y-sm">
+
+
+	<header class="section-heading mt-2">
+		<a href="{% url 'home' %}" class="btn btn-outline-primary float-right text-4xl">See all ads</a> 
+		<h3 class="section-title">{{ expatad_count}} Popular Sites Found</h3>
+	</header>
+	
+</section>
+</div>
+
+
+		
+			<!-- <div class="container-fluid bg-white-500/50">
+				<div class="w-full bg-sky-100 rounded-xl "> -->
+						{% if links %}
+							{% for category in links %}
+								<a href="{{ category.get_url }}" class="btn btn-outline-info text-uppercase font-weight-bold text-4xl m-2 hover:scale-125 duration-1000 ">{{ category.name }}</a>
+							{% endfor %}
+						{% endif %}
+				
+			
+			
+			{% if expatads %}
+			<div class="p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+					{% for expatad in expatads %}
+								<div class="px-6 py-4">
+										<a href="{% url 'expataddetail' expatad.id %}"><div class="bg-white-200  border : rounded-full  ring-2 ring-info-500 ">
+										<div flex flex-wrap class="hover:scale-125 duration-1000">
+											<img class="w-full h-100 rounded-full " src="{{expatad.cover_photo.url}}" alt="AAAA Real Estate" style="min-height : 200px;max-height : 200px">
+
+										</div>
+										
+								</div>
+								<div class="px-6 py-4">
+									<div class="text-center font-bold text-xl mb-2">{{expatad.citycode}}</div>
+									<div class="text-center font-bold text-xl mb-2">{{expatad.landmark}}</div>
+									<div class="text-center font-bold text-xl mb-2">{{expatad.area}} {{expatad.areameasurement}}</div>
+
+									<p class="text-center font-bold text-xl text-gray-700 text-base">{{expatad.Description|slice:":45"}}<p>
+								</div>
+								<div class="px-4 pt-3 pb-16 text-center">
+																
+									<span class="inline-block bg-gray-200 rounded-full px-2 py-1 text-sm font-semibold text-gray-700 mr-2 mb-1">{{expatad.fullname|slice:":35"}}</span>
+									<!-- <span class="inline-block bg-gray-200 rounded-full px-4 py-1 text-sm font-semibold text-gray-700 mr-2 mb-1">{{expatad.contactno}}</span> -->
+									<span class="inline-block bg-gray-200 rounded-full px-4 py-1 text-sm font-semibold text-gray-700 mr-2 mb-1">{{expatad.price | intcomma}}</span>
+				
+								</div>
+
+						</div></a>
+					{% endfor %}
+
+					
+					</div>
+			</div>
+
+
+			{% else %}
+					<div class="outline-blue-500  ring-pink-300 ring-inset rounded shadow-md col-start-1 col-span-8  bg-purple-300">02 
+						<div class="flex flex-wrap ">
+							<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white justify-between">----  Not Found Any Matching  -----</h5>
+						</div>                    
+					</div>
+			{% endif %}
+
+
+			<div class="row justify-content-center  mb-8">
+               <!-- Pagination Started.//   print(expatads) -->
+                <nav class="mt-4" aria-label="Page navigation sample">
+                    {% if expatads.has_other_pages %}
+					
+                      <ul class="pagination">
+                            {% if expatads.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{expatads.previous_page_number}}">Previous</a></li>
+                            {% else %}
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            {% endif %}
+                
+                            {% for i in expatads.paginator.page_range %}
+                                {% if expatads.number == i %}
+                                <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                                {% else %}
+                                    <li class="page-item "><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                {% endif %}
+                        	{% endfor %}
+                
+                            {% if expatads.has_next %}
+                            <li class="page-item "><a class="page-link" href="?page={{expatads.next_page_number}}">Next</a></li>
+                            {% else %}
+                                <li class="page-item disabled "><a class="page-link" href="#">Next</a></li>
+                            {% endif %}
+                      </ul>
+                    {% endif %}
+                </nav>
+			</div>
+                <!-- Pagination Ends Here.// -->
+
+</div>
+
+
+
+{% endblock %}

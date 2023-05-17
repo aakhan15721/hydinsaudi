@@ -1,0 +1,13 @@
+{% autoescape off %}
+
+Hi {{user.first_name}},
+
+{% if is_approved %}
+Congratulations! Your Account has been approved by our admin team. -- Hyderabadies In Saudi
+{% else %}
+We're sorry! You are not eligible for publishing your advertisement on our site. For more details, please contact aakhan1572@yahoo.com. -- Hyderabadies In Saudi Online
+{% endif %}
+
+
+
+{% endautoescape %}

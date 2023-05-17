@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+{% include 'includes/alerts.html' %}
+
+
+    
+    
+    <!-- ========================= SECTION PAGETOP ========================= -->
+    <section class="section-pagetop bg">
+    <div class="container">
+        <h2 class="title-page">My account</h2>
+    </div> <!-- container //  -->
+    </section>
+    <!-- ========================= SECTION INTRO END// ========================= -->
+    
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-content padding-y">
+    <div class="container-fluid">
+    
+    <div class="row">
+        <aside class="col-md-2">
+            <ul class="list-group">
+                <a class="list-group-item active" href="#"> Account overview  </a>
+                <a class="list-group-item" href="#"> My ads/Listing </a>
+                <a class="list-group-item" href="#"> My leads </a>
+                <a class="list-group-item" href="#"> My Selling Items </a>
+                <a class="list-group-item" href="#"> Received offers </a>
+            </ul>
+        </aside> <!-- col.// -->
+        <main class="col-md-10">
+    
+            <article class="card mb-3">
+                <div class="card-body">
+                    
+                    <figure class="icontext">
+                            <div class="icon">
+                                <img src="{% static 'logo/AmjadLogo.jpg' %}" alt="Hyderabadies In Saudi" width="100">
+                            </div>
+                            <div class="text ">
+                                <strong class="font-weight-bold text-4xl"> Mr/Mrs. {{request.user.first_name}} {{request.user.last_name}}  </strong> <br> 
+                                {{request.user}} <br> 
+                                <a href="#">Edit</a>
+                            </div>
+                    </figure>
+                    <hr>
+                    <p>
+                        <i class="fa fa-map-marker text-muted"></i> &nbsp; My address:  
+                         <br>
+                        Hyderabad city, Great Nizaam Street, Kingkoti 123, Liberty &nbsp 
+                        <a href="#" class="btn-link"> Edit</a>
+                    </p>
+    
+                    
+    
+                    <article class="card-group">
+                        <figure class="card bg">
+                            <div class="p-3">
+                                <strong class="font-weight-bold text-4xl"> 
+                                {{expatad_count}}</strong><br>
+                                <span>Ads Found From You</span>
+                            </div>
+                        </figure>
+                        <figure class="card bg">
+                            <div class="p-3">
+                                <strong class="font-weight-bold text-4xl"> 
+                                    {{contactme_count}}</strong><br>
+                                 
+                                <span>Leads you got</span>
+                            </div>
+                        </figure>
+<!--                         <figure class="card bg">
+                            <div class="p-3">
+                                 <h5 class="card-title">12</h5>
+                                <span>Awaiting delivery</span>
+                            </div>
+                        </figure>
+                        <figure class="card bg">
+                            <div class="p-3">
+                                 <h5 class="card-title">50</h5>
+                                <span>Delivered items</span>
+                            </div>
+                        </figure> -->
+                    </article>
+                    
+    
+                </div> <!-- card-body .// -->
+            </article> <!-- card.// -->
+    
+            <article class="card  mb-3">
+                <div class="card-body">
+                    <h5 class="card-title mb-4">My Posted Ads </h5>	
+    
+                    <div class="row">
+                        {% for expatad in expatads %}
+                            <div class="col-md-6">
+                                <figure class="itemside  mb-3">
+                                    <div class="aside"><img src="{{ expatad.cover_photo.url}}" class="border img-lg" alt="Hyderabadies In Saudi" style="min-height : 200px;max-height : 200px"></div>
+                                    <figcaption class="info">
+                                        <time class="text-muted"><i class="fa fa-calendar-alt"></i>Last Updated : {{ expatad.updated }}</time>
+                                        <p>{{ expatad.fullname }} </p>
+                                        <p>{{expatad.Description|slice:":150"}} </p>
+                                        <p>{{ expatad.sublocationcode }} </p>
+                                        <p>{{ expatad.area }} {{ expatad.areameasurement }}  </p>
+                                        <p>{{ expatad.price }} </p>
+                                        <!-- <span class="text-warning">Pending</span> -->
+                                    </figcaption>
+                                </figure>
+                            </div> <!-- col.// -->
+                        {% endfor %}
+                </div> <!-- row.// -->
+    
+                <a href="#" class="btn btn-outline-primary"> Go to Top  </a>
+                </div> <!-- card-body .// -->
+            </article> <!-- card.// -->
+    
+        </main> <!-- col.// -->
+    </div>
+    
+    </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END
+                        <a href="{{ i.images.url }}">
+                            <img class="card-img-top mb-8 img-fluid" src="{{ i.images.url }}" alt="Card image cap" >
+                        </a>
+        ========================= -->
+
+{% endblock %}

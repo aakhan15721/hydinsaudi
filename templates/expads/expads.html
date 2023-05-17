@@ -1,0 +1,132 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+
+<section class="section-name padding-y-sm">
+    <div class="container">
+    
+    <header class="section-heading">
+        <a href="{% url 'home' %}" class="btn btn-outline-primary float-right">See all</a>
+        <h3 class="section-title">Popular products</h3>
+    </header><!-- sect-heading -->
+    
+    </div><!-- container // -->
+    </section>
+
+<select class="custom-select mb-4"
+        name="countries"
+        hx-get="{% url 'cities' %}" 
+        hx-trigger="change" 
+        hx-target="#cities">
+
+    <option selected>Open this select country</option>
+    {% for country in countries %}
+        <option value="{{country.pk}}">{{ country.name }}</option>
+    {% endfor %}
+</select>
+
+<div id="cities">
+    {% include 'partials/cities.html' %} 
+</div>
+
+</br> </br> </br>
+<div class="grid grid-cols-8 gap-1 divide-x ">
+    <div class="outline-blue-500  ring-pink-300 ring-inset rounded col-span-1 bg-purple-300">01
+
+
+
+  
+
+    </div>
+    <div class="outline-blue-500  ring-pink-300 ring-inset rounded shadow-md col-start-2 col-span-7  ">02 
+        <div class="flex flex-wrap ">
+
+
+  
+          <div class="w-1/2 flex-wrap px-3 ">
+
+            <a href="#" class="flex flex-col  items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-130 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{% static 'images/banners/slide-lg-3.jpg' %}" alt="">
+              <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              </div>
+          </a>
+
+            </div>
+
+
+          <div class="w-1/2 flex-wrap px-3">
+            
+            <a href="#" class="flex flex-col  items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-130 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="C:\expatproj\static\images\image-4.jpg" alt="">
+              <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              </div>
+          </a>
+          </div>
+
+
+          <div class="w-1/2 flex-wrap px-3 ">
+
+            <a href="#" class="flex flex-col  items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-130 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="{% static 'images/banners/slide-lg-3.jpg' %}" alt="">
+              <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              </div>
+          </a>
+
+            </div>
+
+
+          <div class="w-1/2 flex-wrap px-3">
+            
+            <a href="#" class="flex flex-col  items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-130 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="C:\expatproj\static\images\image-4.jpg" alt="">
+              <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              </div>
+          </a>
+          </div>
+          <div class="w-1/2 bg-gray-500 ">
+            
+            <a href="#" class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-130 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="C:\expatproj\static\images\avatars\avatar1.jpg" alt="">
+              <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              </div>
+          </a>
+          </div>
+
+
+  
+          <div class="w-1/2 bg-gray-400 h-12">
+            
+            <a href="#" class="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+              <img class="object-cover w-full rounded-t-lg h-130 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="C:\expatproj\static\images\image-4.jpg" alt="">
+              <div class="flex flex-col justify-between p-4 leading-normal">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              </div>
+          </a>
+          </div>
+
+          <div class="w-1/2 bg-gray-400 h-12"></div>
+          <div class="w-1/2 bg-gray-500 h-12"></div>
+          <div class="w-1/3 bg-gray-400 h-12"></div>
+          <div class="w-1/3 bg-gray-500 h-12"></div>
+          <div class="w-1/3 bg-gray-400 h-12"></div>
+          <div class="w-1/3 bg-gray-500 h-12"></div>
+        </div>                    
+
+    </div>
+    <div class="outline-blue-500  ring-pink-300 ring-inset rounded shadow-md  col-span-0 bg-green-300">03</div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="container-fluid">
+<div class="grid grid-cols-8 gap-4 divide-x  m-6">
+    
+        <div class="col-span-3 border-style: double border-4 border-red-600 border-info-500/100;">
+            <img  src="{{ expatads.cover_photo.url}}" alt="" style="min-height : 500px;max-height : 700px rounded-full">
+        
+        </div>
+
+
+    <div class="border : double border-3  rounded-full  ring-4 ring-red-700  col-start-4 col-span-6 border-style:  border-4 border-red-600 border-red-100/60; ">
+        <div class="Justify-center">
+            <h1 class="p-4 text-center">
+                Name : {{ expatads.fullname}}
+            </h1>
+        </div>
+        
+        <div class="Justify-center">
+            <h2 class="p-4 text-center">
+                City : {{ expatads.citycode}}
+            </h2>
+        </div>
+
+        <div class="Justify-center">
+            <h2 class="p-4 text-center">
+                Area : {{expatads.area}} {{expatads.areameasurement}}
+            </h2>
+        </div>
+
+        <div class="Justify-center">
+            <h2 class="p-4 text-center">
+                Landmark : {{ expatads.landmark}}
+            </h2>
+        </div>
+        <div class="Justify-center">
+            <h2 class="p-4 text-center">
+                For : {{ expatads.purpose}}
+            </h2>
+        </div>
+        <div class="Justify-center">
+            <h2 class="p-4 text-center">
+                Price (Total Price) : {{ expatads.price | intcomma}}
+            </h2>
+        </div>
+        <div class="Justify-center">
+            <h2 class="p-4 text-center">
+                Description : {{ expatads.Description|slice:":45"}}
+            </h2>
+        </div>
+        
+        <div class="Justify-center">
+            <h2 class="p-4 text-center">
+                <a href="{% url 'contactmes' %}" class="btn btn-outline-info font-weight-bold text-info rounded-pill" >Contact me</a>
+                <a href="{% url 'interested' expatads.id %}" class="btn btn-outline-info font-weight-bold text-info rounded-pill" >Get phone Details</a>
+                {% if uservalue %}
+                    <a href="{% url 'updatead' expatads.id %}" class="btn btn-outline-info font-weight-bold text-info rounded-pill">Update</a>      
+                    <a href="{% url 'edit_ad' expatads.id %}" class="btn btn-outline-info font-weight-bold text-info rounded-pill">Edit</a>             
+<!--                     <form action="{% url 'deletead' expatads.id %}" method="post" enctype="multipart/form-data" class="d-inline ">
+                        {% csrf_token %}
+                        
+                        <input type="submit" class="btn btn-outline-danger font-weight-bold text-info rounded-pill text-4xl" value="Delete">
+                    </form> -->
+                    <a href="{% url 'delete_ad' expatads.id %}" onclick="return confirm('Are you sure you want to delete Your Posting')" class="btn btn-outline-danger font-weight-bold text-info rounded-pill text-4xl"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+
+
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+		<!-- ============================ COMPONENT 1 ================================= -->
+
+							<!-- <a href="{{ expatImage_list.images.url }}" target="mainImage"><img src="{{ expatImage_list.images.url }}" alt="Product Image"></a> -->
+<!--                         <div class="row">
+                            {% for i in expatImage_list %}
+                            <div class="p-8">
+                                         {% thumbnail i.images "100x100" crop="center" as im %}
+                                            <a href="{{im.url}}" target="mainImage"><img src="{{im.url}}" alt="Product Image"></a>
+                                        {% endthumbnail %}
+                            </div>
+                      
+							{% endfor %}
+                        </div> -->
+<!-- 
+
+                        <h2> {{ expatads.fullname}} Details and Todal Images found  {{ expatImage_list.count}} </h2>
+
+                        <hr />
+                        <br>
+                           
+                                    <div>
+                                        {% for i in expatImage_list %}
+                                                <img class="card-img-top img-fluid" src="{{ i.images.url }}" alt="Card image cap" style="height: 200px; width: 200px;">
+                                  
+                                        {% empty %}
+                                            <p> No Images Found </p>
+                                        {% endfor %}
+                                    </div> -->
+
+	
+ 
+		<!-- ============================ COMPONENT 1 END .// ================================= -->
+        <h2> {{ expatads.fullname}} Details Images found  {{ expatImage_list.count}} </h2>
+
+        <hr />
+        <br>
+ 
+        <div class="bg-gray-300">
+            <div class="m-auto flex">
+              <div class="overflow-auto w-full flex items-center">
+                <div class="p-15">
+                    {% for i in expatImage_list %}
+                        <a href="{{ i.images.url }}">
+                            <img class="card-img-top mb-8 img-fluid" src="{{ i.images.url }}" alt="Card image cap" >
+                        </a>
+                    {% empty %}
+                        <p> No Images Found </p>
+                    {% endfor %}
+                </div>
+
+              </div>
+
+            </div>
+          </div> 
+
+<!--           <div class="mx-auto p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            {% for i in expatImage_list %}
+                   <img class="ml-4 hover:mb-8" src="{{ i.images.url }}" alt="Card image cap" style="min-height : 200px;max-height : 200px">
+            {% empty %}
+                <p> No Images Found </p>
+            {% endfor %}
+          </div> -->
+
+    
+{% endblock %}
+    

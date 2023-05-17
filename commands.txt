@@ -1,0 +1,290 @@
+Microsoft Windows [Version 10.0.19044.2604]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\amjad>cd \
+
+C:\>virtualenv hydinsaudi
+created virtual environment CPython3.9.7.final.0-64 in 10420ms
+  creator CPython3Windows(dest=C:\hydinsaudi, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\amjad\AppData\Local\pypa\virtualenv)
+    added seed packages: pip==22.3.1, setuptools==65.6.3, wheel==0.38.4
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+C:\>Script\activate
+The system cannot find the path specified.
+
+C:\>cd hydinsaudi
+
+C:\hydinsaudi>Script\activate
+The system cannot find the path specified.
+
+C:\hydinsaudi>Scripts\activate
+
+(hydinsaudi) C:\hydinsaudi>pip install django
+Collecting django
+  Using cached Django-4.1.7-py3-none-any.whl (8.1 MB)
+Collecting asgiref<4,>=3.5.2
+  Using cached asgiref-3.6.0-py3-none-any.whl (23 kB)
+Collecting tzdata
+  Using cached tzdata-2022.7-py2.py3-none-any.whl (340 kB)
+Collecting sqlparse>=0.2.2
+  Using cached sqlparse-0.4.3-py3-none-any.whl (42 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.6.0 django-4.1.7 sqlparse-0.4.3 tzdata-2022.7
+
+[notice] A new release of pip available: 22.3.1 -> 23.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(hydinsaudi) C:\hydinsaudi>pip install pillow
+Collecting pillow
+  Downloading Pillow-9.4.0-cp39-cp39-win_amd64.whl (2.5 MB)
+     ---------------------------------------- 2.5/2.5 MB 3.1 MB/s eta 0:00:00
+Installing collected packages: pillow
+Successfully installed pillow-9.4.0
+
+[notice] A new release of pip available: 22.3.1 -> 23.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(hydinsaudi) C:\hydinsaudi>python.exe -m pip install --upgrade pip
+Requirement already satisfied: pip in c:\hydinsaudi\lib\site-packages (22.3.1)
+Collecting pip
+  Using cached pip-23.0.1-py3-none-any.whl (2.1 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3.1
+    Uninstalling pip-22.3.1:
+      Successfully uninstalled pip-22.3.1
+Successfully installed pip-23.0.1
+
+(hydinsaudi) C:\hydinsaudi>django-admin startproject main .
+
+(hydinsaudi) C:\hydinsaudi>pip install django_extensions
+Collecting django_extensions
+  Using cached django_extensions-3.2.1-py3-none-any.whl (229 kB)
+Requirement already satisfied: Django>=3.2 in c:\hydinsaudi\lib\site-packages (from django_extensions) (4.1.7)
+Requirement already satisfied: asgiref<4,>=3.5.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django_extensions) (3.6.0)
+Requirement already satisfied: tzdata in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django_extensions) (2022.7)
+Requirement already satisfied: sqlparse>=0.2.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django_extensions) (0.4.3)
+Installing collected packages: django_extensions
+Successfully installed django_extensions-3.2.1
+
+(hydinsaudi) C:\hydinsaudi>pip install django-htmx
+Collecting django-htmx
+  Downloading django_htmx-1.14.0-py3-none-any.whl (7.1 kB)
+Requirement already satisfied: Django>=3.2 in c:\hydinsaudi\lib\site-packages (from django-htmx) (4.1.7)
+Requirement already satisfied: sqlparse>=0.2.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-htmx) (0.4.3)
+Requirement already satisfied: asgiref<4,>=3.5.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-htmx) (3.6.0)
+Requirement already satisfied: tzdata in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-htmx) (2022.7)
+Installing collected packages: django-htmx
+Successfully installed django-htmx-1.14.0
+
+(hydinsaudi) C:\hydinsaudi>pip install django-widget-tweaks
+Collecting django-widget-tweaks
+  Using cached django_widget_tweaks-1.4.12-py3-none-any.whl (8.9 kB)
+Installing collected packages: django-widget-tweaks
+Successfully installed django-widget-tweaks-1.4.12
+
+(hydinsaudi) C:\hydinsaudi>pip install decouple
+Collecting decouple
+  Using cached decouple-0.0.7-py3-none-any.whl
+Installing collected packages: decouple
+Successfully installed decouple-0.0.7
+
+(hydinsaudi) C:\hydinsaudi>pip install simplejson
+Collecting simplejson
+  Downloading simplejson-3.18.3-cp39-cp39-win_amd64.whl (74 kB)
+     ---------------------------------------- 74.9/74.9 kB 4.0 MB/s eta 0:00:00
+Installing collected packages: simplejson
+Successfully installed simplejson-3.18.3
+
+(hydinsaudi) C:\hydinsaudi>pip install psycopg2
+Collecting psycopg2
+  Using cached psycopg2-2.9.5-cp39-cp39-win_amd64.whl (1.2 MB)
+Installing collected packages: psycopg2
+Successfully installed psycopg2-2.9.5
+
+(hydinsaudi) C:\hydinsaudi>python manage.py startapp ads
+
+(hydinsaudi) C:\hydinsaudi>python manage.py startapp accounts
+
+(hydinsaudi) C:\hydinsaudi>python manage.py startapp customers
+
+(hydinsaudi) C:\hydinsaudi>python manage.py startapp categories
+
+(hydinsaudi) C:\hydinsaudi>python manage.py startapp vendor
+
+(hydinsaudi) C:\hydinsaudi>python manage.py startapp expads
+
+(hydinsaudi) C:\hydinsaudi>
+
+(hydinsaudi) C:\hydinsaudi>
+
+(hydinsaudi) C:\hydinsaudi>pip uninstall decouple
+Found existing installation: decouple 0.0.7
+Uninstalling decouple-0.0.7:
+  Would remove:
+    c:\hydinsaudi\lib\site-packages\decouple-0.0.7.dist-info\*
+    c:\hydinsaudi\lib\site-packages\decouple\*
+Proceed (Y/n)? pip install python-decouple
+Your response ('pip install python-decouple') was not one of the expected responses: y, n,
+Proceed (Y/n)? y
+  Successfully uninstalled decouple-0.0.7
+
+(hydinsaudi) C:\hydinsaudi>pip install python-decouple
+Collecting python-decouple
+  Downloading python_decouple-3.8-py3-none-any.whl (9.9 kB)
+Installing collected packages: python-decouple
+Successfully installed python-decouple-3.8
+
+(hydinsaudi) C:\hydinsaudi>
+(hydinsaudi) C:\hydinsaudi>pip install django-filter
+Collecting django-filter
+  Using cached django_filter-22.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: Django>=3.2 in c:\hydinsaudi\lib\site-packages (from django-filter) (4.1.7)
+Requirement already satisfied: sqlparse>=0.2.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-filter) (0.4.3)
+Requirement already satisfied: asgiref<4,>=3.5.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-filter) (3.6.0)
+Requirement already satisfied: tzdata in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-filter) (2022.7)
+Installing collected packages: django-filter
+Successfully installed django-filter-22.1
+
+
+(hydinsaudi) C:\hydinsaudi>pip install sorl-thumbnail
+Collecting sorl-thumbnail
+  Using cached sorl_thumbnail-12.9.0-py3-none-any.whl (41 kB)
+Installing collected packages: sorl-thumbnail
+Successfully installed sorl-thumbnail-12.9.0
+(hydinsaudi) C:\hydinsaudi>pip install folium
+Collecting folium
+  Using cached folium-0.14.0-py2.py3-none-any.whl (102 kB)
+Collecting jinja2>=2.9
+  Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting requests
+  Downloading requests-2.28.2-py3-none-any.whl (62 kB)
+     ---------------------------------------- 62.8/62.8 kB 3.5 MB/s eta 0:00:00
+Collecting numpy
+  Using cached numpy-1.24.2-cp39-cp39-win_amd64.whl (14.9 MB)
+Collecting branca>=0.6.0
+  Using cached branca-0.6.0-py3-none-any.whl (24 kB)
+Collecting MarkupSafe>=2.0
+  Using cached MarkupSafe-2.1.2-cp39-cp39-win_amd64.whl (16 kB)
+Collecting charset-normalizer<4,>=2
+  Downloading charset_normalizer-3.1.0-cp39-cp39-win_amd64.whl (97 kB)
+     ---------------------------------------- 97.1/97.1 kB 5.8 MB/s eta 0:00:00
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.14-py2.py3-none-any.whl (140 kB)
+     ---------------------------------------- 140.6/140.6 kB 4.2 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17
+  Using cached certifi-2022.12.7-py3-none-any.whl (155 kB)
+Collecting idna<4,>=2.5
+  Using cached idna-3.4-py3-none-any.whl (61 kB)
+Installing collected packages: urllib3, numpy, MarkupSafe, idna, charset-normalizer, certifi, requests, jinja2, branca, folium
+Successfully installed MarkupSafe-2.1.2 branca-0.6.0 certifi-2022.12.7 charset-normalizer-3.1.0 folium-0.14.0 idna-3.4 jinja2-3.1.2 numpy-1.24.2 requests-2.28.2 urllib3-1.26.14
+
+(hydinsaudi) C:\hydinsaudi>
+
+(hydinsaudi) C:\hydinsaudi>python manage.py makemigrations
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'main/static' in the STATICFILES_DIRS setting does not exist.
+Migrations for 'accounts':
+  accounts\migrations\0001_initial.py
+    - Create model Contactus
+    - Create model User
+    - Create model UserProfile
+Migrations for 'ads':
+  ads\migrations\0001_initial.py
+    - Create model EVChargingLocation
+Migrations for 'expads':
+  expads\migrations\0001_initial.py
+    - Create model Category
+    - Create model CityCode
+    - Create model Countrycode
+    - Create model Expatad
+    - Create model Interested
+    - Create model LocationCode
+    - Create model Purpose
+    - Create model SubLocationCode
+    - Create model ExpatImage
+    - Add field purpose to expatad
+    - Add field user to expatad
+    - Create model Contactme
+    - Add field countrycode to citycode
+Migrations for 'vendor':
+  vendor\migrations\0001_initial.py
+    - Create model Vendor
+    - Create model OpeningHour
+
+(hydinsaudi) C:\hydinsaudi>
+(hydinsaudi) C:\hydinsaudi>python manage.py migrate
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'main/static' in the STATICFILES_DIRS setting does not exist.
+Operations to perform:
+  Apply all migrations: accounts, admin, ads, auth, contenttypes, expads, sessions, thumbnail, vendor
+Running migrations:
+  No migrations to apply.
+
+(hydinsaudi) C:\hydinsaudi>
+
+(hydinsaudi) C:\hydinsaudi>pip install humanize
+Collecting humanize
+  Using cached humanize-4.6.0-py3-none-any.whl (109 kB)
+Installing collected packages: humanize
+Successfully installed humanize-4.6.0
+
+(hydinsaudi) C:\hydinsaudi>pip install gunicorn
+Collecting gunicorn
+  Using cached gunicorn-20.1.0-py3-none-any.whl (79 kB)
+Requirement already satisfied: setuptools>=3.0 in c:\hydinsaudi\lib\site-packages (from gunicorn) (65.6.3)
+Installing collected packages: gunicorn
+Successfully installed gunicorn-20.1.0
+
+(hydinsaudi) C:\hydinsaudi>pip install certifi
+Requirement already satisfied: certifi in c:\hydinsaudi\lib\site-packages (2022.12.7)
+
+(hydinsaudi) C:\hydinsaudi>pip install sorl-thumbnail
+Requirement already satisfied: sorl-thumbnail in c:\hydinsaudi\lib\site-packages (12.9.0)
+
+(hydinsaudi) C:\hydinsaudi>pip install django-model-utils
+Collecting django-model-utils
+  Using cached django_model_utils-4.3.1-py3-none-any.whl (36 kB)
+Requirement already satisfied: Django>=3.2 in c:\hydinsaudi\lib\site-packages (from django-model-utils) (4.1.7)
+Requirement already satisfied: tzdata in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-model-utils) (2022.7)
+Requirement already satisfied: sqlparse>=0.2.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-model-utils) (0.4.3)
+Requirement already satisfied: asgiref<4,>=3.5.2 in c:\hydinsaudi\lib\site-packages (from Django>=3.2->django-model-utils) (3.6.0)
+Installing collected packages: django-model-utils
+Successfully installed django-model-utils-4.3.1
+
+(hydinsaudi) C:\hydinsaudi>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
